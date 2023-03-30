@@ -111,7 +111,7 @@ const BOSONS = {
         },
         photon: [
             {
-                desc: "Gain more Dark Matters & Mass from Black Hole based on Photon.",
+                desc: "Gain more Dark Matters & Black Hole Mass based on Photon.",
                 cost(x) { return E(1.5).pow(x.pow(1.25)).mul(10) },
                 bulk(x=player.supernova.bosons.photon) { return x.gte(10) ? x.div(10).max(1).log(1.5).root(1.25).add(1).floor() : E(0) },
                 effect(x) { 
@@ -130,7 +130,7 @@ const BOSONS = {
                 },
                 effDesc(x) { if(hasElement(404))return "^"+format(x);return format(x)+"x" },
             },{
-                desc: "Photons gain is boosted by Collapsed Star.",
+                desc: "Photons gain is boosted by Collapsed Stars.",
                 cost(x) { return E(5).pow(x.pow(1.25)).mul(500) },
                 bulk(x=player.supernova.bosons.photon) { return x.gte(500) ? x.div(500).max(1).log(5).root(1.25).add(1).floor() : E(0) },
                 effect(x) { 
@@ -155,7 +155,7 @@ const BOSONS = {
         ],
         gluon: [
             {
-                desc: "Gain more Atoms & Atomic Powers based on Gluon.",
+                desc: "Gain more Atoms & Atomic Powers based on Gluons.",
                 cost(x) { return E(1.5).pow(x.pow(1.25)).mul(10) },
                 bulk(x=player.supernova.bosons.gluon) { return x.gte(10) ? x.div(10).max(1).log(1.5).root(1.25).add(1).floor() : E(0) },
                 effect(x) { 

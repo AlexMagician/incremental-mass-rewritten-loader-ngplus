@@ -70,19 +70,19 @@ const ELEMENTS = {
     upgs: [
         null,
         {
-            desc: `Improves quark gain formula is better.`,
+            desc: `Improves Quark gain formula.`,
             cost: E(5e8),
             cdesc: `Quark gain exponent ^1.01`,
             ccost: E("ee2.7777e12"),
         },
         {
-            desc: `Hardened Challenge scale 25% weaker.`,
+            desc: `Hardened Challenges scale 25% weaker.`,
             cost: E(2.5e12),
-            cdesc: `Impossible Challenge scale 5% weaker`,
+            cdesc: `Impossible Challenges scale 5% weaker`,
             ccost: E("ee2.8e12"),
         },
         {
-            desc: `Electron Power boost Atomic Powers gain.`,
+            desc: `Electron Power boosts Atomic Powers gain.`,
             cost: E(1e15),
             effect() {
                 let x = player.atom?player.atom.powers[2].add(1).root(2):E(1)
@@ -99,7 +99,7 @@ const ELEMENTS = {
             ccost: E("ee2.9e12"),
         },
         {
-            desc: `Stronger's power is stronger based on Proton Powers.`,
+            desc: `Stronger's effect increases based on Proton Powers.`,
             cost: E(2.5e16),
             effect() {
                 let x = player.atom?player.atom.powers[0].max(1).log10().pow(0.8).div(50).add(1):E(1)
@@ -112,13 +112,13 @@ const ELEMENTS = {
             ccost: E("ee2.9e12"),
         },
         {
-            desc: `The 7th challenge's effect is twice as effective.`,
+            desc: `7th challenge's effect is twice as effective.`,
             cost: E(1e18),
-            cdesc: `The 7th challenge's effect is better`,
+            cdesc: `7th challenge's effect is better`,
             ccost: E("ee3e12"),
         },
         {
-            desc: `Gain 1% more quarks for each challenge completion.`,
+            desc: `Gain 1% more Quarks for each challenge completion.`,
             cost: E(5e18),
             effect() {
                 let x = E(0)
@@ -129,7 +129,7 @@ const ELEMENTS = {
                 return x
             },
             effDesc(x) { return format(x)+"x" },
-            cdesc: `This element's effect boost Exotic Matter at a reduced rate.`,
+            cdesc: `This element's effect also boosts Exotic Matter at a reduced rate.`,
             ccost: E("ee3.1e12"),
             ceffect() {
                 let x = E(0)
@@ -232,7 +232,7 @@ const ELEMENTS = {
             ccost: E("ee5.3e12"),
         },
         {
-            desc: `You can now automatically buy Cosmic Rays. Cosmic Ray raise tickspeed effect at an extremely reduced rate.`,
+            desc: `You can now automatically buy Cosmic Rays. Cosmic Ray raises tickspeed effect at an extremely reduced rate.`,
             cost: E(1e44),
             effect() {
                 let x = player.atom.gamma_ray.pow(0.35).mul(0.01).add(1)
@@ -240,7 +240,7 @@ const ELEMENTS = {
                 return x
             },
             effDesc(x) { return "^"+format(x) },
-            cdesc: `Argon's effect boost Normal Mass gain.`,
+            cdesc: `Argon's effect boosts Normal Mass gain.`,
             ccost: E("ee5.4e12"),
         },
         {
@@ -281,7 +281,7 @@ const ELEMENTS = {
             ccost: E("ee6.9e12"),
         },
         {
-            desc: `Passively gain 100% of the atoms you would get from resetting each second. Atomic Power boost Relativistic particles gain at a reduced rate.`,
+            desc: `Passively gain 100% of the atoms you would get from resetting each second. Atomic Power boosts Relativistic particles gain at a reduced rate.`,
             cost: E(1e75),
             effect() {
                 let x = hasPrestige(0,40) ? player.atom.atomic.max(1).log10().add(1).log10().add(1).root(2) : player.atom.atomic.max(1).log10().add(1).pow(0.4)
@@ -299,7 +299,7 @@ const ELEMENTS = {
             ccost: E("ee7.7e12"),
         },
         {
-            desc: `Hardened Challenge scaling weaker for each element bought.`,
+            desc: `Hardened Challenges scale weaker for each element bought.`,
             cost: E(1e85),
             effect() {
                 let x = E(0.99).pow(E(player.atom.elements.length).softcap(30,2/3,0)).max(0.5)
@@ -307,7 +307,7 @@ const ELEMENTS = {
                 return x
             },
             effDesc(x) { return format(E(1).sub(x).mul(100))+"% weaker" },
-            cdesc: `Impossible Challenge scaling weaker for each element charged.`,
+            cdesc: `Impossible Challenges scale weaker for each element charged.`,
             ccost: E("ee7.7e12"),
             ceffect() {
                 let x = E(0.999).pow(E(player.atom.chargedElements.length))
@@ -339,7 +339,7 @@ const ELEMENTS = {
             ccost: E("ee9.3e12"),
         },
         {
-            desc: `Electron powers effect is better. Passively gain 10% of each particle you would assign quarks.`,
+            desc: `Electron powers effect is better. Passively assign 10% of each particle per second, as if you manually assigned Quarks, without spending them.`,
             cost: E(1e107),
             cdesc: `Electron powers effect is squared.`,
             ccost: E("ee9.7e12"),

@@ -95,12 +95,12 @@ const TREE_UPGS = {
         c: {
             req() { return player.supernova.times.gte(1) },
             reqDesc: `1 Supernova.`,
-            desc: `Start generating 0.1 Neutron Star per second (not affected by offline production).`,
+            desc: `Start generating 0.1 Neutron Stars per second (doesn't work offline).`,
             cost: E(0),
         },
         sn1: {
             branch: ["c"],
-            desc: `Tickspeed affects Neutron Star gain at a reduced rate.`,
+            desc: `Tickspeed affects Neutron Stars gain at a reduced rate.`,
             cost: E(10),
             effect() {
                 let x = player.tickspeed.add(1).pow(0.25)
@@ -110,7 +110,7 @@ const TREE_UPGS = {
         },
         sn2: {
             branch: ["sn1"],
-            desc: `Supernova boosts Neutron Star gain.`,
+            desc: `Supernova count boosts Neutron Star gain.`,
             cost: E(350),
             effect() {
                 let sn = player.supernova.times
@@ -122,7 +122,7 @@ const TREE_UPGS = {
         },
         sn3: {
             branch: ["sn2"],
-            desc: `Blue star boost Neutron star gain at a reduced rate.`,
+            desc: `Blue star boosts Neutron Star gain at a reduced rate.`,
             req() { return player.supernova.times.gte(6) },
             reqDesc: `6 Supernovas.`,
             cost: E(50000),
@@ -134,7 +134,7 @@ const TREE_UPGS = {
         },
         sn4: {
             branch: ["sn3"],
-            desc: `Tree “sn2”'s effect base is increased by Supernova.`,
+            desc: `[sn2] effect base is increased by Supernova.`,
             unl() { return player.supernova.post_10 },
             req() { return player.supernova.times.gte(13) },
             reqDesc: `13 Supernovas.`,
@@ -183,7 +183,7 @@ const TREE_UPGS = {
         },
         m2: {
             branch: ["m1"],
-            desc: `Multiplies the Mass requirement for softcap^2 by 1.5`,
+            desc: `Multiplies the Mass requirement for second softcap by 1.5`,
             cost: E(800),
         },
         m3: {
@@ -206,7 +206,7 @@ const TREE_UPGS = {
         },
         rp1: {
             branch: ["c"],
-            desc: `Neutron Stars multiplies Rage Powers gain`,
+            desc: `Neutron Stars multiplys Rage Powers gain`,
             cost: E(200),
             effect() {
                 let x = E(1e50).pow(player.supernova.stars.add(1).log10().pow(5).softcap(1e3,0.25,0))
@@ -216,7 +216,7 @@ const TREE_UPGS = {
         },
         bh1: {
             branch: ["c"],
-            desc: `Neutron Star multiplies Dark Matters gain.`,
+            desc: `Neutron Stars multiply Dark Matters gain.`,
             cost: E(400),
             effect() {
                 let x = E(1e35).pow(player.supernova.stars.add(1).log10().pow(5).softcap(1e3,0.25,0))
@@ -228,7 +228,7 @@ const TREE_UPGS = {
             branch: ['bh1'],
             req() { return player.supernova.chal.noBHC && player.bh.mass.gte("1.5e1.7556e4") },
             reqDesc() {return `Reach ${format("e1.75e4")} uni of black hole without buying any BH Condenser in Supernova run.`},
-            desc: `BH Condenser power is raised to the 1.15th.`,
+            desc: `BH Condenser power is raised to 1.15th.`,
             cost: E(1500),
         },
         s1: {
@@ -264,7 +264,7 @@ const TREE_UPGS = {
             branch: ["s3"],
             req() { return player.supernova.times.gte(6) },
             reqDesc: `6 Supernovas.`,
-            desc: `Beyond unlocking stars, Star Unlocker will transform into Booster.`,
+            desc: `Star Unlocker will transform into Booster after all Stars have been unlocked.`,
             cost: E(1e5),
         },
         s5: {
@@ -290,7 +290,7 @@ const TREE_UPGS = {
             branch: ["qol2"],
             req() { return player.supernova.times.gte(4) },
             reqDesc: `4 Supernovas.`,
-            desc: `Start with Techntium-43 unlocked, improve their element better. You can automatically gain Relativistic particles from mass.`,
+            desc: `Start with Techntium-43 unlocked, improve their effect. You can automatically gain Relativistic particles from mass.`,
             cost: E(10000),
         },
         qol4: {
@@ -305,7 +305,7 @@ const TREE_UPGS = {
             branch: ["qol4"],
             req() { return player.supernova.times.gte(16) },
             reqDesc: `16 Supernovas.`,
-            desc: `Tetrs no longer resets anything.`,
+            desc: `Tetrs reset nothing.`,
             cost: E(1e13),
         },
         qol6: {
@@ -320,21 +320,21 @@ const TREE_UPGS = {
             unl() { return player.supernova.fermions.unl && hasTree("fn2") },
             req() { return player.supernova.times.gte(40) },
             reqDesc: `40 Supernovas.`,
-            desc: `You can now automatically buy Photon & Gluon upgrades, they no longer spent their amount.`,
+            desc: `You can now automatically buy Photon & Gluon upgrades, they don't spend resources.`,
             cost: E(1e48),
         },
         qol8: {
             branch: ["unl1"],
             req() { return player.supernova.times.gte(60) },
             reqDesc: `60 Supernovas.`,
-            desc: `You can now automatically Pent up, Pent no longer resets anything.`,
+            desc: `You can now automatically Pent up and it resets nothing.`,
             cost: E(1e78),
         },
         qol9: {
             branch: ["unl1"],
             req() { return player.supernova.times.gte(78) },
             reqDesc: `78 Supernovas.`,
-            desc: `You can now automatically buy Radiation Boosters, they no longer spent.`,
+            desc: `You can now automatically buy Radiation Boosters, they no longer spend resources.`,
             cost: E(1e111),
         },
         chal1: {
@@ -371,7 +371,7 @@ const TREE_UPGS = {
         chal4a: {
             unl() { return player.supernova.post_10 },
             branch: ["chal4"],
-            desc: `Make 9th Challenges effect better.`,
+            desc: `Make 9th Challenge's effect better.`,
             cost: E(1e8),
         },
         chal4b: {

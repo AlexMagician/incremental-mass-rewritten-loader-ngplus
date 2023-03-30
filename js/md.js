@@ -92,7 +92,7 @@ const MASS_DILATION = {
                 },
                 effDesc(x) { return format(x,0)+"x"+(x.gte('e1.2e4')?" <span class='soft'>(softcapped)</span>":"")},
             },{
-                desc: `Make dilated mass effect stronger.`,
+                desc: `Increase effect of dilated mass.`,
                 cost(x) { return tmp.md.bd3 ? E(10).pow(E(1.25).pow(x)).mul(100) : E(10).pow(x).mul(100) },
                 bulk() { return player.md.mass.gte(100)?(tmp.md.bd3 ? player.md.mass.div(100).max(1).log10().max(1).log(1.25).add(1).floor() : player.md.mass.div(100).max(1).log10().add(1).floor()):E(0) },
                 effect(x) {
@@ -109,7 +109,7 @@ const MASS_DILATION = {
                 effect(x) { return E(hasChargedElement(25)?3:2).pow(x.mul(tmp.md.upgs[11].eff||1)).softcap(1e25,0.75,0) },
                 effDesc(x) { return format(x,0)+"x"+(x.gte(1e25)?" <span class='soft'>(softcapped)</span>":"") },
             },{
-                desc: `Dilated mass also boost Stronger's power.`,
+                desc: `Dilated mass also boosts Stronger's effect.`,
                 maxLvl: 1,
                 cost(x) { return E(1.619e20).mul(25) },
                 bulk() { return player.md.mass.gte(E(1.619e20).mul(25))?E(1):E(0) },
@@ -137,20 +137,20 @@ const MASS_DILATION = {
                 },
                 effDesc(x) { return "+^"+format(x)+(x.gte(1e3)?" <span class='soft'>(softcapped)</span>":"") },
             },{
-                desc: `Dilated mass boost quarks gain.`,
+                desc: `Dilated mass boosts Quarks gain.`,
                 maxLvl: 1,
                 cost(x) { return E(1.5e191) },
                 bulk() { return player.md.mass.gte(1.5e191)?E(1):E(0) },
                 effect(x) { return E(5).pow(player.md.mass.max(1).log10().root(2)) },
                 effDesc(x) { return format(x)+"x" },
             },{
-                desc: `Mass Dilation upgrade 2 effect's formula is better.`,
+                desc: `Mass Dilation upgrade 2 effect's formula becomes better.`,
                 maxLvl: 1,
                 cost(x) { return E(1.5e246) },
                 bulk() { return player.md.mass.gte(1.5e246)?E(1):E(0) },
             },{
                 unl() { return STARS.unlocked() || player.supernova.times.gte(1) },
-                desc: `Tickspeed affect all-star resources at a reduced rate.`,
+                desc: `Tickspeed affects all-star resources at a reduced rate.`,
                 maxLvl: 1,
                 cost(x) { return E(1.5e296) },
                 bulk() { return player.md.mass.gte(1.5e296)?E(1):E(0) },
@@ -158,7 +158,7 @@ const MASS_DILATION = {
                 effDesc(x) { return format(x)+"x" },
             },{
                 unl() { return STARS.unlocked() || player.supernova.times.gte(1) },
-                desc: `Double quarks gain.`,
+                desc: `Double Quarks gain.`,
                 cost(x) { return E(5).pow(x).mul('1.50001e536') },
                 bulk() { return player.md.mass.gte('1.50001e536')?player.md.mass.div('1.50001e536').max(1).log(5).add(1).floor():E(0) },
                 effect(x) {
@@ -167,7 +167,7 @@ const MASS_DILATION = {
                 effDesc(x) { return format(x)+"x"+(x.gte(1e25)?" <span class='soft'>(softcapped)</span>":"") },
             },{
                 unl() { return player.supernova.times.gte(1) },
-                desc: `Add 0.015 Mass Dilation upgrade 6's base.`,
+                desc: `Increase base of 6th Mass Dilation upgrade by 0.015.`,
                 cost(x) { return E(1e50).pow(x.pow(1.5)).mul('1.50001e1556') },
                 bulk() { return player.md.mass.gte('1.50001e1556')?player.md.mass.div('1.50001e1556').max(1).log(1e50).max(0).root(1.5).add(1).floor():E(0) },
                 effect(i) {
@@ -270,12 +270,12 @@ const MASS_DILATION = {
                     },
                     effDesc(x) { return "+^"+format(x) },
                 },{
-                    desc: `Multiplier from DM effect is transformed to Exponent (at a reduced rate, is weaker while Big Ripped), but second MD upgrade's cost is exponentally increased. Purchasing this upgrade will reset it.`,
+                    desc: `Multiplier from DM effect is transformed to Exponent (at a reduced rate, weaker while Big Ripped), but second MD upgrade's cost increases exponentially. Purchasing this upgrade will reset it.`,
                     maxLvl: 1,
                     cost(x) { return E(1.619e23) },
                     bulk() { return player.md.break.mass.gte(1.619e23)?E(1):E(0) },
                 },{
-                    desc: `11th MD Upgrade is 50% stronger, its effected level softcaps at 1e18.`,
+                    desc() { return `11th MD Upgrade is 50% stronger, its effective level now softcaps at ` + format(E(1e18)) + "."},
                     maxLvl: 1,
                     cost(x) { return E(1.989e33) },
                     bulk() { return player.md.break.mass.gte(1.989e33)?E(1):E(0) },
@@ -300,7 +300,7 @@ const MASS_DILATION = {
                     },
                     effDesc(x) { return format(x,0)+"x" },
                 },{
-                    desc: `Death Shard & Entropy boosts each other.`,
+                    desc: `Death Shard & Entropy boost each other.`,
                     maxLvl: 1,
                     cost(x) { return uni(1e35) },
                     bulk() { return player.md.break.mass.gte(uni(1e35))?E(1):E(0) },
@@ -344,7 +344,7 @@ const MASS_DILATION = {
                     cost(x) { return uni("1e1680") },
                     bulk() { return player.md.break.mass.gte(uni("1e1680"))?E(1):E(0) },
                 },{
-                    desc: `Relativistic mass boost Prestige mass gain.`,
+                    desc: `Relativistic mass boosts Prestige mass gain.`,
 					unl() {return hasPrestige(1,10)},
                     maxLvl: 1,
                     cost(x) { return uni("1e2000") },

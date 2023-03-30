@@ -222,8 +222,8 @@ function updateStarsHTML() {
 	if (hasElement(530))tmp.el.stars_Eff.setTxt(format(tmp.stars.effect)+"x, ^"+format(tmp.stars.effectPower)+", exponent ^"+format(tmp.stars.effectExpPower,5))
     tmp.el.star_btn.setDisplay(hasTree("s4") || player.stars.unls < 5)
     tmp.el.star_btn.setHTML((player.stars.unls < 5 || !hasTree("s4"))
-    ? `Unlock new type of Stars, require ${format(tmp.stars.generator_req)} Quark`
-    : `Boost all-Star resources gain, require ${format(tmp.stars.generator_boost_req)} Quark<br>Base: ${format(tmp.stars.generator_boost_base)}x<br>Currently: ${format(tmp.stars.generator_boost_eff)}x`)
+    ? `Unlock new type of Stars (requires ${format(tmp.stars.generator_req)} Quarks)`
+    : `Boost all-Star resources gain (requires ${format(tmp.stars.generator_boost_req)} Quark)<br>Base: ${format(tmp.stars.generator_boost_base)}x<br>Currently: ${format(tmp.stars.generator_boost_eff)}x`)
 
     tmp.el.star_btn.setClasses({btn: true, locked: !player.atom.quarks.gte(!hasTree("s4")||player.stars.unls < 5?tmp.stars.generator_req:tmp.stars.generator_boost_req)})
 

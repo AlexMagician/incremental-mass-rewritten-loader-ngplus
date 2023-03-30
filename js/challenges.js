@@ -166,8 +166,8 @@ const CHALS = {
         return formatMass
     },
     getReset(x) {
-        if (x < 5) return "Entering challenge will reset with Dark Matters!"
-        if (x < 9) return "Entering challenge will reset with Atoms except previous challenges!"
+        if (x < 5) return "Entering challenge will force a Dark Matters reset!"
+        if (x < 9) return "Entering challenge will force an Atoms reset (except previous challenges)!"
         if (x < 13) return "Entering challenge will reset without being Supernova!"
         if (x < 17) return "Entering challenge will force an Infinity reset!"
 		if (x < 21) return "Entering challenge will force an Eternity reset!"
@@ -369,10 +369,10 @@ const CHALS = {
     },
     1: {
         title: "Instant Scale",
-        desc: "Super Ranks, Mass Upgrades starts at 25. In addtional, Super Tickspeed start at 50.",
+        desc: "Super Ranks & Mass Upgrades start scaling at 25. Super Tickspeed starts at 50.",
         reward() {
 			if(hasElement(348))return `Meta-Tickspeed scaling starts later.`;
-			return `Super Ranks starts later, Super Tickspeed scaling weaker by completions.`
+			return `Super Ranks start later, Super Tickspeed scaling is reduced.`
 		},
         max: E(100),
         inc: E(5),
@@ -389,7 +389,7 @@ const CHALS = {
         unl() { return player.chal.comps[1].gte(1) || player.atom.unl },
         title: "Anti-Tickspeed",
         desc: "You cannot buy Tickspeed.",
-        reward: `For every completions adds +7.5% to Tickspeed Power.`,
+        reward: `For every completion add +7.5% to Tickspeed Power.`,
         max: E(100),
         inc: E(10),
         pow: E(1.3),
@@ -406,8 +406,8 @@ const CHALS = {
     3: {
         unl() { return player.chal.comps[2].gte(1) || player.atom.unl },
         title: "Melted Mass",
-        desc: "Mass gain softcap is divided by 1e150, and is stronger.",
-        reward: `Mass gain are raised by completions, but cannot append while in this challenge!`,
+        desc: "Mass gain softcap starts /1e150 earlier, and is stronger.",
+        reward: `Mass gain is raised by completions. (Doesn't work in this challenge)`,
         max: E(100),
         inc: E(25),
         pow: E(1.25),
@@ -424,8 +424,8 @@ const CHALS = {
     4: {
         unl() { return player.chal.comps[3].gte(1) || player.atom.unl },
         title: "Weakened Rage",
-        desc: "Rage Points gain is rooted by 10. In addtional, mass gain softcap is divided by 1e100.",
-        reward: `Rage Powers gain are raised by completions.`,
+        desc: "Rage Points gain is rooted by 10. In addition, mass gain softcap starts /1e100 earlier.",
+        reward: `Rage Powers gain is raised by completions.`,
         max: E(100),
         inc: E(30),
         pow: E(1.25),

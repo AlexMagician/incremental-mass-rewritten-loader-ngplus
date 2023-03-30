@@ -61,7 +61,7 @@ const ATOM = {
     },
     canReset() { return tmp.atom.gain.gte(1) },
     reset() {
-        if (tmp.atom.canReset) if (player.confirms.atom?confirm("Are you sure to reset?"):true) {
+        if (tmp.atom.canReset) if (player.confirms.atom?confirm("Are you sure you want to reset for Atom?"):true) {
             player.atom.points = player.atom.points.add(tmp.atom.gain)
             player.atom.quarks = player.atom.quarks.add(tmp.atom.quarkGain)
             player.atom.unl = true
@@ -274,17 +274,17 @@ const ATOM = {
             x=>{ return `
                 Boosts Mass gain by ${hasElement(105)?"^"+format(x.eff1):format(x.eff1)+"x"}<br><br>`+
 				(hasElement(156)?` Boosts Tickspeed Power by ^`+format(x.eff2):
-                `Adds Tickspeed Power by ${format(x.eff2.mul(100))}%`)
+                `Increases Tickspeed Power by ${format(x.eff2.mul(100))}%`)
 			},
             x=>{ return `
                 Boosts Rage Power gain by ${hasElement(105)?"^"+format(x.eff1):format(x.eff1)+"x"}<br><br>`+
-				(hasElement(355)?`Makes Mass gain boosted by Rage Powers - ^`+format(x.eff2):
-                `Makes Mass gain boosted by Rage Powers - ${format(x.eff2)}x<br><br>`)
+				(hasElement(355)?`Makes Rage Powers boost Mass gain - ^`+format(x.eff2):
+                `Makes Rage Powers boost Mass gain - ${format(x.eff2)}x<br><br>`)
             },
             x=>{ return `
                 Boosts Dark Matter gain by ${hasElement(105)?"^"+format(x.eff1):format(x.eff1)+"x"}<br><br>`+
 				(hasElement(346)?` Boosts BH Condenser Power by ^`+format(x.eff2):
-                `Adds BH Condenser Power by ${format(x.eff2)}`)
+                `Increases BH Condenser Power by ${format(x.eff2)}`)
             },
         ],
         colors: ['#0f0','#ff0','#f00'],
@@ -332,7 +332,7 @@ function setupAtomHTML() {
         <div style="width: 30%"><button class="btn" onclick="ATOM.particles.assign(${x})">Assign</button><br><br>
             <div style="color: ${ATOM.particles.colors[x]}; min-height: 120px">
                 <h2><span id="particle_${x}_amt">X</span> ${ATOM.particles.names[x]}</h2><br>
-                Which generates <span id="particle_${x}_amtEff">X</span> ${ATOM.particles.names[x]} Powers<br>
+                which generates <span id="particle_${x}_amtEff">X</span> ${ATOM.particles.names[x]} Powers<br>
                 You have <span id="particle_${x}_power">X</span> ${ATOM.particles.names[x]} Powers, which:
             </div><br><div id="particle_${x}_powerEff"></div>
         </div>

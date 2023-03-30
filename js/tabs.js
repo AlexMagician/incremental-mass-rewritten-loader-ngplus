@@ -27,11 +27,11 @@ const TABS = {
             { id: "Black Hole", unl() { return player.bh.unl }, style: "bh" },
             { id: "Atomic Generator", unl() { return player.atom.unl }, style: "atom" },
             { id: "Stars", unl() { return STARS.unlocked() } },
-            { id: "Indescribable Matter", unl() { return quUnl() } },
+            { id: "Indescripable Matter", unl() { return quUnl() } },
             { id: "Eternal", unl() { return player.et.times.gt(0) } },
         ],
         1: [
-            { id: "Ranks Rewards" },
+            { id: "Rank Rewards" },
             { id: "Scaling", unl() { return tmp.scaling ? tmp.scaling.super.length>0 : false } },
             { id: "Prestige Rewards", unl() { return hasUpgrade("br",9) } },
             { id: "Ascension Rewards", unl() { return hasAscension(0,1) } },
@@ -40,7 +40,6 @@ const TABS = {
             { id: "Challenges" },
             { id: "Quantum Challenge", unl() { return hasTree("unl3") }, style: "qu" },
             { id: "Galactic Challenge", unl() { return hasElement(267) }, style: "sn" },
-            //{ id: "Big Rip", unl() { return hasTree("unl4") }, style: "qu" },
         ],
         4: [
             { id: "Particles" },

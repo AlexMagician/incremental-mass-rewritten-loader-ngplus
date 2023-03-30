@@ -697,34 +697,34 @@ const FORMS = {
     },
     reset_msg: {
         msgs: {
-            rp: "Require over 1e9 tonne of mass to reset previous features for gain Rage Powers",
-            dm: "Require over 1e20 Rage Power to reset all previous features for gain Dark Matters",
-            atom: "Require over 1e100 uni of black hole to reset all previous features for gain Atoms & Quarks",
+            rp: "Reach 1e9 tonne of mass to reset previous features and gain Rage Powers",
+            dm: "Reach 1e20 Rage Power to reset all previous features and gain Dark Matters",
+            atom: "Reach 1e100 uni of black hole to reset all previous features and gain Atoms & Quarks",
             md: "Dilate mass, then cancel",
             br: "Big Rip the Dimension, then go back",
-            eternity: "Require over 1e2000 of Pre-Quantum Global Speed to become Eternal",
-            exotic: "Require over eee12 g of mass to reset previous features for gain Exotic Matter",
+            eternity: "Reach 1e2000 of Pre-Quantum Global Speed to become Eternal",
+            exotic: "Reach eee12 g of mass to reset previous features for Exotic Matter",
         },
         set(id) {
             if (id=="sn") {
-                player.reset_msg = "Reach over "+format(tmp.supernova.maxlimit)+" collapsed stars to be Supernova"
-				if (player.supernova.times.gte(SUPERNOVA_GALAXY.req()) && !hasElement(291)) player.reset_msg = "You reached the maximum Supernova limit!";
+                player.reset_msg = "Reach "+format(tmp.supernova.maxlimit)+" collapsed stars to become Supernova"
+				if (player.supernova.times.gte(SUPERNOVA_GALAXY.req()) && !hasElement(291)) player.reset_msg = "You reached the maximum Supernova amount!";
                 return
             }
             if (id=="superGal") {
-                player.reset_msg = "Reach over "+format(SUPERNOVA_GALAXY.req())+" Supernova to get a Supernova Galaxy"
+                player.reset_msg = "Reach "+format(SUPERNOVA_GALAXY.req())+" Supernova to get a Supernova Galaxy"
                 return
             }
             if (id=="qu") {
-                player.reset_msg = "Require over "+formatMass(mlt(1e4))+" of mass to "+(QCs.active()?"complete Quantum Challenge":"go Quantum")
+                player.reset_msg = "Requires "+formatMass(mlt(1e4))+" mass to "+(QCs.active()?"complete Quantum Challenge":"go Quantum")
                 return
             }
             if (id=="infinity") {
-                player.reset_msg = "Require over "+format(E(Number.MAX_VALUE))+" of Quantum Foam to go Infinity"
+                player.reset_msg = "Requires "+format(E(Number.MAX_VALUE))+" Quantum Foam to go Infinite"
                 return
             }
             if (id=="exotic") {
-                player.reset_msg = "Require over "+formatMass(new Decimal("eee12"))+" of mass to reset previous features for gain Exotic Matter"
+                player.reset_msg = "Requires "+formatMass(new Decimal("eee12"))+" mass to gain Exotic Matter"
                 return
             }
             player.reset_msg = this.msgs[id]

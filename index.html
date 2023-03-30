@@ -2,12 +2,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Incremental Mass Rewritten (loader3229's v0.5 NG+) original made by MrRedShark77, modded by loader3229, based on v0.5" />
+    <meta name="description" content="Incremental Mass Rewritten (loader3229 & AlexHouk NG+2) original made by MrRedShark77, modded by loader3229 and AlexHouk, based on v0.5" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://qq1010903229.github.io/incremental-mass-rewritten/" />
-    <meta property="og:title" content="Incremental Mass Rewritten  (loader3229's v0.5 NG+)" />
-    <meta property="og:description" content="Incremental Mass Rewritten (loader3229's v0.5 NG+) original made by MrRedShark77, modded by loader3229, based on v0.5" />
+    <meta property="og:title" content="Incremental Mass Rewritten (loader3229 & AlexHouk NG+2)" />
+    <meta property="og:description" content="Incremental Mass Rewritten (loader3229 & AlexHouk NG+2) original made by MrRedShark77, modded by loader3229 and AlexHouk, based on v0.5" />
     <meta property="og:image" content="https://mrredshark77.github.io/incremental-mass-rewritten//images/thumbail.jpg" />
 
     <link rel="image_src" href="images/thumbail.png">
@@ -60,7 +60,7 @@
 
     <script src="js/main.js"></script>
 
-    <title>Incremental Mass Rewritten (loader3229's NG+)</title>
+    <title>Incremental Mass Rewritten (loader3229 & AlexHouk NG+2)</title>
 </head>
 <body onload="loadGame()">
     <input id="copy" style="position: absolute; top: 0; left: 0; user-select: all; visibility: hidden;">
@@ -81,11 +81,11 @@
     </div>
     <div id="supernova_scene" style='display: none'>
         <br>
-        <div id="sns1" style='font-size: 25px;'>You have become SUPERNOVA!</div><br>
-        <div id="sns2" style='font-size: 15px;'>But will reset everything, and gain SUPERNOVA!</div><br>
-        <div id="sns3" style='font-size: 15px;'>You can pass it...</div><br>
-        <div id="sns4" style='font-size: 20px;'>... to discover!</div><br>
-        <button class="btn" id="sns5" onclick="SUPERNOVA.reset()">You'll be Supernova...</button>
+        <div id="sns1" style='font-size: 25px;'>You just became SUPERNOVA!</div><br>
+        <div id="sns2" style='font-size: 15px;'>Everything will be reset, and you'll achieve the SUPERNOVA!</div><br>
+        <div id="sns3" style='font-size: 15px;'>Let it happen...</div><br>
+        <div id="sns4" style='font-size: 20px;'>...and see what comes next!</div><br>
+        <button class="btn" id="sns5" onclick="SUPERNOVA.reset()">I must become Supernova...</button>
     </div>
     <div id="other_stats">
         
@@ -96,14 +96,14 @@
             <button class="btn" onclick="SUPERNOVA.reset(true)">Reset without being Supernova</button>
         </div>
         <div style="min-height: 70px; margin-top: 15px;">
-            <h2>You become <span id="supernova_rank"></span> <span id="supernova_scale"></span>Supernova</h2><br>
+            <h2>You've become <span id="supernova_rank"></span> <span id="supernova_scale"></span>Supernova</h2><br>
             <span id="supernova_next">X</span>
         </div>
         <div style="width: 100%; border-bottom: solid 2px white; height: 5px; margin-bottom: 13px;"></div>
         <div id="sn_stabs" style="min-height: 40px;"></div><br>
         <div id="stab_frame5_0">
             <div style="height: 130px;">
-                You have <span id="neutronStar">X</span> Neutron star.<br>
+                You have <span id="neutronStar">X</span> Neutron Stars.<br>
                 <div id="tree_desc" style="margin-top: 3px;">
     
                 </div>
@@ -115,47 +115,47 @@
             <div class="bosons">
                 <div class="table_center">
                     <div class="graviton sub_b">
-                        You have <span id="graviton_amt">X</span> Graviton, which speeds Bosons production by <span id="graviton_eff0">Y</span>
+                        You have <span id="graviton_amt">X</span> Gravitons, multiplying all Boson production by x<span id="graviton_eff0">Y</span>
                     </div>
                     <div class="higgs_boson sub_b">
-                        You have <span id="hb_amt">X</span> Higgs Boson, which raises Gravitons effect by <span id="hb_eff0">Y</span>
+                        You have <span id="hb_amt">X</span> Higgs Bosons, raising effect of Gravitons by ^<span id="hb_eff0">Y</span>
                     </div>
                 </div><div class="table_center">
                     <div class="photon sub_b">
-                        You have <span id="photon_amt">X</span> Photon<br><br>
+                        You have <span id="photon_amt">X</span> Photons<br><br>
                         <div id="photon_upgs_table" class="table_center"></div>
                     </div>
                     <div class="gluon sub_b">
-                        You have <span id="gluon_amt">X</span> Gluon<br><br>
+                        You have <span id="gluon_amt">X</span> Gluons<br><br>
                         <div id="gluon_upgs_table" class="table_center"></div>
                     </div>
                 </div><div class="table_center">
                     <div class="w_boson sub_b">
-                        You have <span id="pos_w_amt">X</span> W<sup>+</sup> Boson, which multiplies Mass gain by <span id="pos_w_eff0">Y</span>,<br> multiplies W<sup>-</sup> Bosons gain by <span id="pos_w_eff1">Y</span>
+                        You have <span id="pos_w_amt">X</span> W<sup>+</sup> Bosons, multiplying Mass gain by x<span id="pos_w_eff0">Y</span>,<br> and W<sup>-</sup> Bosons gain by x<span id="pos_w_eff1">Y</span>
                         <br><br>
-                        You have <span id="neg_w_amt">X</span> W<sup>-</sup> Boson, which makes Mass gains softcap^2 starts ^<span id="neg_w_eff0">Y</span> later,<br> multiplies W<sup>+</sup> Bosons gain by <span id="neg_w_eff1">Y</span>
+                        You have <span id="neg_w_amt">X</span> W<sup>-</sup> Bosons, increasing second Mass gain softcap start by ^<span id="neg_w_eff0">Y</span>,<br> and multiplying W<sup>+</sup> Bosons gain by x<span id="neg_w_eff1">Y</span>
                     </div>
                     <div class="z_boson sub_b">
-                        You have <span id="z_boson_amt">X</span> Z<sup>0</sup> Boson, which multiplies Tickspeed Power by <span id="z_boson_eff0">Y</span>,<br> multiplies W Bosons gain by <span id="z_boson_eff1">Y</span>
+                        You have <span id="z_boson_amt">X</span> Z<sup>0</sup> Bosons, multiplying Tickspeed Power by x<span id="z_boson_eff0">Y</span>,<br> and W Bosons gain by x<span id="z_boson_eff1">Y</span>
                     </div>
                 </div>
             </div>
         </div><div id="stab_frame5_2">
-            Note: Choosing any fermion will reset without being Supernova!<br><br>
-            <button class="btn" onclick="FERMIONS.backNormal()">Back to Normal</button><br><br>
+            Note: Entering Fermions will reset without being Supernova!<br><br>
+            <button class="btn" onclick="FERMIONS.backNormal()">Exit Fermion</button><br><br>
             <div class="fermions">
                 <div class="f_quark sub_f">
-                    You have <span id="fquarkAmt">X</span> U-Quark<br><br>
+                    You have <span id="fquarkAmt">X</span> U-Quarks<br><br>
                     <div id="fermions_quark_table" class="table_center"></div>
                 </div>
                 <div class="f_lepton sub_f">
-                    You have <span id="fleptonAmt">X</span> U-Lepton<br><br>
+                    You have <span id="fleptonAmt">X</span> U-Leptons<br><br>
                     <div id="fermions_lepton_table" class="table_center"></div>
                 </div>
             </div>
         </div><div id="stab_frame5_3">
-            Your frequency is <span id="frequency">0</span> Hz, which multiples any Fermions gain by <span id="frequency_eff">1</span>x<br>
-            <span id="nr_div">At <span id="next_radiation">0</span> of frequency, unlock <span id="unl_radiation">X</span></span><br><br>
+            Your frequency is <span id="frequency">0</span> Hz, increasing all Fermions gain by x<span id="frequency_eff">1</span>x<br>
+            <span id="nr_div">Unlock <span id="unl_radiation">X</span> upon reaching <span id="next_radiation">0</span> Hz</span><br><br>
             <div id="radiation_table"></div>
         </div><div id="stab_frame5_4">
 			You have <span id="superGal">0</span> <span id="superGalScale"></span>Supernova Galaxies<br>
@@ -345,26 +345,26 @@
                         Prestige BH Condenser Effect: <span id="prestigeBHC_eff">X</span> to Mass of Prestige Black Hole gain
                     </div>
                 </div><div id="ascension_mass_upgs_table"></div><br><br><div id="mass_softcaps">
-                    <span id="massSoft1" class="red">After <b id="massSoftStart1">X</b> of mass gain will softcap mass gain!<br></span>
-                    <span id="massSoft3" style="color: rgb(121, 0, 0)">After <b id="massSoftStart3">X</b> of mass gain will softcap^2 mass gain!<br></span>
-                    <span id="massSoft4" style="color: rgb(122, 0, 86)">After <b id="massSoftStart4">X</b> of mass gain will softcap^3 mass gain!<br></span>
-                    <span id="massSoft5" style="color: rgb(255, 94, 0)">After <b id="massSoftStart5">X</b> of mass gain will softcap^4 mass gain!<br></span>
-                    <span id="massSoft6" style="color: rgb(255, 238, 0)">After <b id="massSoftStart6">X</b> of mass gain will softcap^5 mass gain!<br></span>
-                    <span id="massSoft7" style="color: rgb(255, 0, 255)">After <b id="massSoftStart7">X</b> of mass gain will softcap^6 mass gain!<br></span>
-                    <span id="massSoft8" style="color: rgb(0, 255, 255)">After <b id="massSoftStart8">X</b> of mass gain will softcap^7 mass gain!<br></span>
-					<span id="massSoft9" style="color: rgb(255, 128, 128)">After <b id="massSoftStart9">X</b> of mass gain will softcap^8 mass gain!<br></span>
-					<span id="massSoft10" style="color: rgb(128, 255, 128)">After <b id="massSoftStart10">X</b> of mass gain will softcap^9 mass gain!<br></span>
+                    <span id="massSoft1" class="red">Mass gain is softcapped beyond <b id="massSoftStart1">X</b>!<br></span>
+                    <span id="massSoft3" style="color: rgb(255, 0, 149)">Second mass gain softcap starts at <b id="massSoftStart3">X</b>!<br></span>
+                    <span id="massSoft4" style="color: rgb(255, 0, 255)">Third mass gain softcap starts at <b id="massSoftStart4">X</b>!<br></span>
+                    <span id="massSoft5" style="color: rgb(162, 0, 255)">Fourth mass gain softcap starts at <b id="massSoftStart5">X</b>!<br></span>
+                    <span id="massSoft6" style="color: rgb(47, 0, 255)">Fifth mass gain softcap starts at <b id="massSoftStart6">X</b>!<br></span>
+                    <span id="massSoft7" style="color: rgb(0, 204, 255)">Sixth mass gain softcap starts at <b id="massSoftStart7">X</b>!<br></span>
+                    <span id="massSoft8" style="color: rgb(0, 255, 221)">Seventh mass gain softcap starts at <b id="massSoftStart8">X</b>!<br></span>
+					<span id="massSoft9" style="color: rgb(0, 255, 21)">Eighth mass gain softcap starts at <b id="massSoftStart9">X</b>!<br></span>
+					<span id="massSoft10" style="color: rgb(217, 255, 0)">Ninth mass gain softcap starts at <b id="massSoftStart10">X</b>!<br></span>
 					<br>
 					<br>
 					
-                    <span id="massOverflow" style="color: rgb(255, 255, 255)">Because of Mass Overflow, your mass gain is raised by <b id="massOverflow2">X</b>!</span><br>
+                    <span id="massOverflow" style="color: rgb(255, 255, 255)">Because of Mass Overflow, your mass gain is rooted by <b id="massOverflow2">X</b>!</span><br>
 					<span id="rankCollapse" style="color: rgb(255, 255, 255)">Due to Rank Collapse, the start of Meta-Rank scaling is divided by <b id="rankCollapse2">X</b>!</span>
-					<span id="strongerOverflow" style="color: rgb(255, 255, 255)">Because of Stronger Overflow, Stronger effect is raised by <b id="strongerOverflow2">X</b>!</span>
+					<span id="strongerOverflow" style="color: rgb(255, 255, 255)">Because of Stronger Overflow, Stronger effect is rooted by <b id="strongerOverflow2">X</b>!</span>
                 </div>
             </div><div id="stab_frame0_1">
-                You have <span id="bhMass2">X</span> of Black Hole<br>
-                <span class="green">Which multiplies mass gain by <span id="bhEffect">X</span></span><br><br>
-                Black Hole mass's gain formula - (x + 1)<sup id="bhMassPower">0.33</sup> * <span id="bhCondenserEffect">X</span><br><br>
+                You have <span id="bhMass2">X</span> of Black Hole Mass,<br>
+                <span class="green">multiplying mass gain by <span id="bhEffect">X</span></span><br><br>
+                Black Hole Mass gain formula - (x + 1)<sup id="bhMassPower">0.33</sup> * <span id="bhCondenserEffect">X</span><br><br>
                 <div style="width: 100%; margin-bottom: 5px;" class="table_center">
                     <div style="width: 400px">
                         <div class="resources">
@@ -378,16 +378,16 @@
                         BH Condenser Power: <span id="bhCondenser_pow">X</span>x<br>
                     </div>
                 </div><br><div>
-                    <span id="massSoft2" class="red">After <b id="massSoftStart2">X</b> worth of mass gain from Black Hole, mass gain will be softcapped!</span><br>
+                    <span id="massSoft2" class="red">Black Hole Mass gain is softcapped beyond <b id="massSoftStart2">X</b>!</span><br>
                     <span id="bhFSoft1" class="red">
-                        The formula (x + 1)<sup id="bhMassPower2">0.33</sup> softcaps at <b id="bhFSoftStart1">X</b>
+                        Black Hole Mass gain formula<sup id="bhMassPower2">0.33</sup> softcaps after <b id="bhFSoftStart1">X</b>
                     </span>
 					<br><br>
-                    <span id="bhOverflow" style="color: rgb(255, 255, 255)">Because of Black Hole Overflow, <span id="bhOverflow3">the exponent of </span>your Black Hole mass gain is raised by <b id="bhOverflow2">X</b>!</span>
+                    <span id="bhOverflow" style="color: rgb(255, 255, 255)">Because of Black Hole Overflow, <span id="bhOverflow3">exponent of </span>Black Hole Mass gain is rooted by <b id="bhOverflow2">X</b>!</span>
                 </div>
             </div><div id="stab_frame0_2">
-                You have <span id="atomicAmt">X</span> Atomic Power<br>
-                <span class="green">Which provides <span id="atomicEff">X</span> free Tickspeeds</span><br><br>
+                You have <span id="atomicAmt">X</span> Atomic Powers,<br>
+                <span class="green">creating <span id="atomicEff">X</span> free Tickspeeds</span><br><br>
                 <div style="width: 100%; margin-bottom: 5px;" class="table_center">
                     <div style="width: 400px">
                         <div class="resources">
@@ -401,20 +401,20 @@
                         Cosmic Ray Power: <span id="gamma_ray_pow">X</span>x<br>
                         Cosmic Ray Effect: <span id="gamma_ray_eff">X</span>
                     </div>
-					<span id="atomicOverflow" style="color: rgb(255, 255, 255)">Because of Atomic Overflow, your Atomic Power gain is raised by <b id="atomicOverflow2">X</b>!</span>
+					<span id="atomicOverflow" style="color: rgb(255, 255, 255)">Because of Atomic Overflow, your Atomic Powers gain is rooted by <b id="atomicOverflow2">X</b>!</span>
 
                 </div>
             </div><div id="stab_frame0_3">
-                You collapsed <span id="stars_Amt">X</span> stars, which makes mass gain is multiplied based on every type of Ranks<br>
+                You have <span id="stars_Amt">X</span> Collapsed Stars, boosting mass gain based on product of all Rank amounts<br>
                 <span class="green">Currently: <span id="stars_Eff">X</span></span><br><br>
                 <button id="star_btn" class="btn" onclick="STARS.generators.unl()">X</button><br><br>
                 <div id="stars_table" class="table_center"></div><br><br>
-                <span id="starSoft1" class="red">After <b id="starSoftStart1">X</b> of collapsed stars gain will softcap collapsed stars gain!</span><br>
-				<span id="starOverflow" style="color: rgb(255, 255, 255)">Because of Star Overflow, your collapsed stars gain is raised by <b id="starOverflow1">X</b>!</span>
+                <span id="starSoft1" class="red">Collapsed Stars gain softcaps after <b id="starSoftStart1">X</b>!</span><br>
+				<span id="starOverflow" style="color: rgb(255, 255, 255)">Because of Star Overflow, your Collapsed Stars gain is rooted by <b id="starOverflow1">X</b>!</span>
 
             </div><div id="stab_frame0_4">
-                You have <span id="bpAmt">0</span> Blueprint Particle<br>
-                <span class="green">Which increases pre-Quantum global speed by <span id="bpEff">1</span>x</span><br><br>
+                You have <span id="bpAmt">0</span> Blueprint Particles,<br>
+                <span class="green">increasing pre-Quantum global speed by <span id="bpEff">1</span>x</span><br><br>
                 <div style="width: 100%; margin-bottom: 5px;" class="table_center">
                     <div style="width: 400px">
                         <div class="resources">
@@ -430,8 +430,8 @@
                     </div>
                 </div>
             </div><div id="stab_frame0_5">
-                You have <span id="shardsAmt">0</span> Timeshards<br>
-                <span class="green">Which increases pre-Quantum global speed by ^<span id="shardsEff">1</span> before division</span><br><br>
+                You have <span id="shardsAmt">0</span> Time Shards,<br>
+                <span class="green">increasing pre-Quantum global speed by ^<span id="shardsEff">1</span> before division</span><br><br>
                 <div style="width: 100%; margin-bottom: 5px;" class="table_center">
                     <div style="width: 400px">
                         <div class="resources">
@@ -478,19 +478,19 @@
                     <span class="green" id="chal_ch_eff"></span>
                 </div>
             </div><div id="stab_frame3_1">
-                You have <span id="qc_shard">0</span> Quantum Shard, which raises to <span id="qc_shard_b">2</span><br>
-                <span class="green">Translated to <span id="qc_shard_eff">1</span>x multiplier of Quantum Foams</span><br><br>
+                You have <span id="qc_shard">0</span> Quantum Shards, (^<span id="qc_shard_b">2</span>)<br>
+                <span class="green">translating to <span id="qc_shard_eff">1</span>x multiplier for Quantum Foam gain</span><br><br>
                 <button class="btn" onclick="QCs.enter()" id="qc_btn">Enter the Quantum Challenge</button><br><br>
                 <div class="table_center" style="min-height: 30px;">
                     <div style="width: 145px">
-                        <button onclick="tmp.qc_tab = 0" class="btn_tab">Modifications</button>
+                        <button onclick="tmp.qc_tab = 0" class="btn_tab">Modifiers</button>
                     </div><div style="width: 145px">
                         <button onclick="tmp.qc_tab = 1" class="btn_tab">Presets</button>
                     </div>
                 </div><br>
                 <div id="qc_tab0">
-                    Note 1: Click any image to show challenge description<br>
-                    Note 2: While in Quantum challenge, you need to go to Quantum to complete the Quantum Challenge<br><br>
+                    Note 1: Click any image to show modifier description<br>
+                    Note 2: Go Quantum in order to complete the Quantum Challenge<br><br>
                     <div class="table_center" id="QC_table"></div><br>
 					<button class="btn" onclick="QCs.maxAll();">Max All</button> <button class="btn" onclick="QCs.resetAll();">Reset</button> <button class="btn" onclick="QCs.import();">Import</button> <button class="btn" onclick="QCs.export();">Export</button><br>
                     <div id="qc_desc_div">
@@ -498,18 +498,18 @@
                         <span class="red" id="qc_ch_desc"></span>
                     </div>
                 </div><div id="qc_tab1">
-                    <button class="btn" onclick="addQCPresetAs()">Add present as your modifications</button><br><br><button class="btn" onclick="importPreset()">Import preset</button><br><br>
+                    <button class="btn" onclick="addQCPresetAs()">Save preset</button><br><br><button class="btn" onclick="importPreset()">Import preset</button><br><br>
                     <div id="QC_Presets_table"></div>
                 </div>
                 
             </div><div id="stab_frame3_2">
-                You have <span id="gc_shard">0</span> Galactic Shards<br>
-				Which are raising Galactic Power gain by ^<span id="gc_shardeff">0</span><br><br>
+                You have <span id="gc_shard">0</span> Galactic Shards,<br>
+				which are raising Galactic Power gain by ^<span id="gc_shardeff">0</span><br><br>
                 While in Galactic Challenge, gains of Pre-Quantum resources are set to 10^^(slog(gain) - <span id="gc_nerf1"></span>)<br>
                 Pre-Quantum Global Speed is set to 10^^(slog(Pre-Quantum Global Speed) - <span id="gc_nerf2"></span>)<br>
                 Effect of Beta particles is softcapped.<br>
                 <span id="gc_trapeff"></span><br><br>
-				You need to get <span id="gc_goal"></span> supernova to complete the challenge.<br>
+				You need to get <span id="gc_goal"></span> Supernova to complete the challenge.<br>
 				Difficulty: <span id="gc_diff"></span>/<span id="gc_diff_max"></span><button class="btn" onclick="decGCdiff()">-1</button><button class="btn" onclick="incGCdiff()">+1</button><br>
                 <br><span id="gc_trap2">Trapped Challenges: <span id="gc_trap"></span>/<span id="gc_trap_max"></span><button class="btn" onclick="decGCtrap()">-1</button><button class="btn" onclick="incGCtrap()">+1</button></span><br>
                 <span id="gc_trapu2">Trapped In All U-Fermions: <span id="gc_trapu"></span><button class="btn" onclick="if(!player.gc.active)player.gc.trapu=!player.gc.trapu">Change</button><br></span>
@@ -541,20 +541,20 @@
                         <span id="elem_eff" class='green'>X</span>
                     </div><br><div id="elements_table"></div>
                 </div><div id="stab_frame4_2">
-                You have <span id="md_particles">X</span> Relativistic particles<br>
-                You have <span id="md_mass">X</span> of dilated mass, which makes Tickspeed <span id="md_eff">X</span> stronger<br><br>
-                <button onclick="MASS_DILATION.onactive()" id="md_btn" class="btn full md" tooltip="When dilating mass, will reset for atom. While mass is dilated: all pre-atom resources, atomic power gains get multiplier's exponent raised to 0.8;">Dilate Mass</button><br><br>
+                You have <span id="md_particles">X</span> Relativistic Particles<br>
+                You have <span id="md_mass">X</span> of dilated mass, which increases Tickspeed effect by <span id="md_eff">X</span><br><br>
+                <button onclick="MASS_DILATION.onactive()" id="md_btn" class="btn full md" tooltip="Entering Mass Dilation performs Atom reset. While active, all pre-Atom resources & Atomic Power gain exponents are raised to ^0.8">Dilate Mass</button><br><br>
                 <div class="table_center">
                     <div id="md_upg_table" class="table_center" style="width: 1000px;"></div>
                 </div><br><div>
-                    <span id="dmSoft1" class="red">After <b id="dmSoftStart1">X</b> of dilated mass gain will softcap dilated mass gain!</span><br>
-					<span id="dmOverflow" style="color: rgb(255, 255, 255)">Because of Dilated Overflow, your dilated mass gain is raised by <b id="dmOverflow2">X</b>!</span>
+                    <span id="dmSoft1" class="red">Dilated mass gain softcaps after <b id="dmSoftStart1">X</b>!</span><br>
+					<span id="dmOverflow" style="color: rgb(255, 255, 255)">Because of Dilated Overflow, your dilated mass gain is rooted by <b id="dmOverflow2">X</b>!</span>
 
                 </div>
             </div><div id="stab_frame4_3">
                 You have <span id="bd_energy">X</span> Relativistic Energy<br>
                 You have <span id="bd_mass">X</span> of Relativistic mass<br><br>
-                <button onclick="MASS_DILATION.break.toggle()" id="bd_btn" class="btn half_full bd" tooltip="When breaking dilation, while in Big Rip, BH Condensers & Cosmic Rays are no longer nerfed by 8th QC modifier, 7th QC modifier is disabled, you can gain Relativistic Energy based on dilated mass. Relativistic Energy gains Relativistic Mass. Fixing Dilation resets your relativistic energy & its mass, also forces a Quantum reset.">Break Dilation</button><br><br>
+                <button onclick="MASS_DILATION.break.toggle()" id="bd_btn" class="btn half_full bd" tooltip="When breaking dilation (can only be done while in Big Rip), BH Condensers & Cosmic Rays are no longer nerfed by 8th QC modifier, 7th QC modifier is disabled, you can gain Relativistic Energy based on dilated mass. Relativistic Energy gains Relativistic Mass. Fixing Dilation resets your relativistic energy & its mass, also forces a Quantum reset.">Break Dilation</button><br><br>
                 <div class="table_center">
                     <div id="bd_upg_table" class="table_center" style="width: 1000px;"></div>
                 </div>
@@ -563,9 +563,9 @@
                 You have <span id="unassignGQuarkAmt">X</span> Galactic Quarks<br><br>
                 <div>
                     <button class="btn" onclick="ATOM.particles.gassignAll()">Distribute</button><br><br>
-                    <input class="input_ratio" style="color: #0f0;" type="number" min="1" id="gratio_d0">
-                    <input class="input_ratio" style="color: #ff0;" type="number" min="1" id="gratio_d1">
-                    <input class="input_ratio" style="color: #f00;" type="number" min="1" id="gratio_d2">
+                    <input class="input_ratio" style="color: #0ff;" type="number" min="1" id="gratio_d0">
+                    <input class="input_ratio" style="color: #00f;" type="number" min="1" id="gratio_d1">
+                    <input class="input_ratio" style="color: #f0f;" type="number" min="1" id="gratio_d2">
                 </div>
                 <br><br>
                 Ratio Mode: <span id="atom_ratio_gq">X</span><br>
@@ -574,7 +574,7 @@
             </div>
         </div><div id="tab_frame6">
             <div id="stab_frame6_0">
-                <span id="qu_theory_div">You have <span id="qu_theory">0</span> Quantum Theory (based on every going quantum)</span><br><br>
+                <span id="qu_theory_div">You have <span id="qu_theory">0</span> Quantum Theories (based on Quantum count)</span><br><br>
                 <div id="chroma_table" class="table_center" style="justify-content: space-evenly;"></div>
             </div><div id="stab_frame6_1">
                 You Quantized <span id="qu_times">0</span> times<br><br>
@@ -585,13 +585,13 @@
                 <input type="text" id="auto_qu_input"><br>
                 = <span id="auto_qu_res"></span>
             </div><div id="stab_frame6_3">
-                You have <span id="prim_theorem">0</span> Primordium Theorem (based on Blueprint Particles)<br>
-                (+1 at <span id="prim_next_theorem">X</span>)<br><br>
+                You have <span id="prim_theorem">0</span> Primordium Theorems (based on Blueprint Particles)<br>
+                (next at <span id="prim_next_theorem">X</span>)<br><br>
 				<div id="primordium_btn">
-                <button class="btn" onclick="giveRandomPParticles(1)">Give 1 random Particle</button>
-                <button class="btn" onclick="giveRandomPParticles(10)">Give 10 random Particles</button>
-                <button class="btn" onclick="giveRandomPParticles(1,true)">Give all random Particles</button>
-                <button class="btn" onclick="respecPParticles()">Respec all Particles</button><br><br>
+                <button class="btn" onclick="giveRandomPParticles(1)">Assign a Particle</button>
+                <button class="btn" onclick="giveRandomPParticles(10)">Assign 10 Particles</button>
+                <button class="btn" onclick="giveRandomPParticles(1,true)">Assign all Particles</button>
+                <button class="btn" onclick="respecPParticles()">Reclaim all spent Particles</button><br><br>
 				</div>
                 <div id="primordium_table"></div>
             </div><div id="stab_frame6_4">
@@ -604,7 +604,7 @@
                         You have <span id="enAmt2">0</span> Entropy<br><span id="enGain"></span>
                     </div><div style="width: 33.3%; min-width: 300px;">
                         You have <span id="enEva2">0 g</span> of Black Hole<br><br>
-                        <button id="evaBtn2" class="btn half_full" onclick="ENTROPY.switch(1)">Evaporate your mass of Black Hole to gain Hawking Radiation</button><br><br>
+                        <button id="evaBtn2" class="btn half_full" onclick="ENTROPY.switch(1)">Evaporate your Black Hole Mass to gain Hawking Radiation</button><br><br>
                         You have <span id="enAmt3">0</span> Hawking Radiation, which increases Entropy cap to <span id="enEff2">0</span>
                     </div>
                 </div><br>
@@ -793,7 +793,7 @@
                 </div>
                 <div id="stab_frame7_4">
                     While in Dark Run, You are trapped in QC with modifiers [30,30,30,30,30,30,30,30], and Galactic Challenge Difficulty 8.<br>
-					You will gain Glyphic Mass based on  your mass in Dark Run.<br>
+					You will gain Glyphic Mass based on reached normal mass.<br>
 					<button class="btn" onclick="DARK_RUN.enter();">Enter/Exit Dark Run</button><br>
 					You have <span id="dr_points"></span> Glyphic Mass.<br>
                 <div class="table_center">
@@ -801,7 +801,7 @@
                 </div>
                 </div>
                 <div id="stab_frame7_5">
-						Each Matter gain is (10^((slog(previous matter)-1)^<span id="matters_pow"></span>)-10).<br><br>
+						Each Matter gain equals to (10^((slog(previous matter)-1)^<span id="matters_pow"></span>)-10).<br><br>
                     <div class="table_center">
                         <div style="width: 20%; min-width: 300px;">
                             Exotic Matter
@@ -840,7 +840,7 @@
                         </div><div style="width: 20%; min-width: 300px;">
                             <span id="matters1_gain" style="color:#ff009d;"></span>
                         </div><div style="width: 40%; min-width: 300px;" id="matters1_eff1a">
-                            Meta-Supernova is <span id="matters1_eff"></span> weaker
+                            Meta-Supernova becomes <span id="matters1_eff"></span> weaker
                         </div><div style="width: 40%; min-width: 300px;" id="matters1_eff2a">
                             Divide the strength of Meta-Supernova scaling by <span id="matters1_eff2"></span>
                         </div>
@@ -975,9 +975,9 @@
             <h2>Confirmation Settings</h2><br>
             <div id="confirm_table" class="table_center"></div>
             <br><br>
-            Incremental Mass Rewritten (loader3229's v0.5 NG+) v0.9.5 - original made by MrRedShark77, modded by loader3229, based on v0.5.4.8<br>
+            Incremental Mass Rewritten (loader3229 & AlexHouk NG+2) v0.1 - original made by MrRedShark77, modded by loader3229 and AlexHouk, based on v0.5.4.8<br>
             The game is inspired by Distance Incremental & Synergism<br><br><br>
-            Hint 1: Hover top image above tabs to show description...<br><br>
+            Hover over images above tabs to show resource descriptions.<br><br>
             Total time played: <span id="total_time">X</span><br><br>
 
             <div style="position: absolute; bottom: 35px; right: 35px;">
