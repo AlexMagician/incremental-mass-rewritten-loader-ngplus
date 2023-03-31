@@ -257,6 +257,8 @@ function updateTabsHTML() {
 function updateUpperHTML() {
 	let gs = tmp.preQUGlobalSpeed
 
+	tmp.el.timeWarp.setHTML(format(player.timeWarps, 0) + "<br>(next in " + formatTime(E(1800).sub(player.warpTime), 0) + ")")
+
 	tmp.el.reset_desc.setHTML(player.reset_msg)
 	tmp.el.mass.setHTML(formatMass(player.mass)+"<br>"+formatGain(player.mass, tmp.massGain.mul(gs), true))
 	

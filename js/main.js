@@ -704,6 +704,7 @@ const FORMS = {
             br: "Big Rip the Dimension, then go back",
             eternity: "Reach 1e2000 of Pre-Quantum Global Speed to become Eternal",
             exotic: "Reach eee12 g of mass to reset previous features for Exotic Matter",
+            warp: "You gain one Time Warp every 30 real-life minutes (including offline).<br>Click here to consume one Time Warp and instantly simulate 15 minutes of offline progress.",
         },
         set(id) {
             if (id=="sn") {
@@ -725,6 +726,10 @@ const FORMS = {
             }
             if (id=="exotic") {
                 player.reset_msg = "Requires "+formatMass(new Decimal("eee12"))+" mass to gain Exotic Matter"
+                return
+            }
+            if (id=="warp") {
+                player.reset_msg = "You gain one Time Warp every 30 real-life minutes (including offline).<br>Click here to consume one Time Warp and instantly simulate 15 minutes of offline progress."
                 return
             }
             player.reset_msg = this.msgs[id]

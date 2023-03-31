@@ -77,6 +77,11 @@ function calc(dt, dt_offline) {
     let du_gs = tmp.preQUGlobalSpeed.mul(dt)
 
     if (tmp.pass) {
+        player.warpTime = player.warpTime.add(dt)
+        if(player.warpTime.gte(1800)) {
+            player.warpTime = player.warpTime.sub(1800)
+            player.timeWarps = player.timeWarps.add(1)
+        }
         player.mass = player.mass.add(tmp.massGain.mul(du_gs))
         if (player.mainUpg.rp.includes(3)) for (let x = 1; x <= UPGS.mass.cols; x++) if (player.autoMassUpg[x] && (player.ranks.rank.gte(x) || player.mainUpg.atom.includes(1))) UPGS.mass.buyMax(x)
         for (let x = 1; x <= UPGS.prestigeMass.cols; x++) if (player.autoprestigeMassUpg[x] &&  UPGS.prestigeMass[x].unl()) UPGS.prestigeMass.buyMax(x)
@@ -348,6 +353,8 @@ function getPlayerData() {
 		},
 		superCluster: E(0),
 		stardust: E(0),
+        warpTime: E(0),
+        timeWarps: E(0),
     }
     for (let x = 0; x < EXOTIC_BOOST_LENGTH; x++) s.exotic.boosts.push(E(0))
     for (let x = 0; x < MATTERS_LENGTH; x++) s.exotic.matters.push(E(0))
@@ -623,4 +630,11 @@ function overflow(number, start, power){
 		number=Decimal.pow(10,number);
 	}
 	return number;
+}
+
+function timeWarp() {
+    if(player.timeWarps.lte(0)) return
+    player.timeWarps = player.timeWarps.sub(1)
+    player.warpTime = player.warpTime.sub(900)
+    player.offline.time = 900
 }
